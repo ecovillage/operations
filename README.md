@@ -21,4 +21,8 @@ run `bundle` to install `runbook` (you need to have ruby installed for all that)
 
 ## Contributing
 
+Yay! Happy! Drop me a line.
+
 ## License
+
+Copyright 2019 Felix Wolfsteller, released under the GPLv3+ License (contained as file `LICENSE` in this repository).
