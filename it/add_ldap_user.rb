@@ -15,7 +15,7 @@ runbook = Runbook.book "IT/Add LDAP User" do
       ask 'E-Mail-Address of user:', into: 'email'
       ask 'First Name of user:',     into: 'first_name'
       ask 'Last Name of user:',      into: 'last_name'
-      ask 'Last UID/GID in LDAP:',    into: 'last_gid'
+      ask 'Last UID in LDAP:',       into: 'last_uid'
     end
 
     step "Generate password" do
@@ -31,7 +31,7 @@ runbook = Runbook.book "IT/Add LDAP User" do
         @user = Operations::IT::LDAP::User.new first_name: @first_name,
           last_name: @last_name,
           mail: @email,
-          number: @last_gid.to_i + 1
+          number: @last_uid.to_i + 1
         pass_hash = Operations::IT::LDAP::AddUser.pass_hash_ssha @passphrase[1]
         @ldif = Operations::IT::LDAP::AddUser.ldif @user, pass_hash
         notice @ldif
