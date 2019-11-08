@@ -1,10 +1,10 @@
 # IT/Add LDAP User
 
-This is a runbook that describes how to set up a user in our LDAP
+This is a runbook that describes how to set up a new user in our LDAP
 
 ## 1. Generate LDIF file
 
-1. [] gather info
+1. [] Gather new user information
 
    E-Mail-Address of user: into email
 
@@ -12,9 +12,9 @@ This is a runbook that describes how to set up a user in our LDAP
 
    Last Name of user: into last_name
 
-   Last UID/GID in LDAP: into last_gid
+   Last UID in LDAP: into last_uid
 
-2. [] generate password
+2. [] Generate password
 
    within: /home/felix/projects/self/glueckskeks/
 
@@ -22,24 +22,42 @@ This is a runbook that describes how to set up a user in our LDAP
 
    run:
    ```ruby
-   Unable to retrieve source code
+   ruby_command do
+     @passphrase = @passphrase.split("\n")
+   end
    ```
 
-3. [] output ldif file
+3. [] Generate ldif data
 
    run:
    ```ruby
-   Unable to retrieve source code
+   ruby_command do
+     @user = Operations::IT::LDAP::User.new first_name: @first_name,
+       last_name: @last_name,
+       mail: @email,
+       number: @last_uid.to_i + 1
+     pass_hash = Operations::IT::LDAP::AddUser.pass_hash_ssha @passphrase[1]
+     @ldif = Operations::IT::LDAP::AddUser.ldif @user, pass_hash
+     notice @ldif
+   end
    ```
 
-4. [] save as ldif file
+4. [] Save as ldif file
 
    run:
    ```ruby
-   Unable to retrieve source code
+   ruby_command do
+     filename = "/tmp/#{@user.uid}.ldif"
+     File.write(filename, @ldif)
+     notice "Wrote ldif to #{filename}"
+   end
    ```
 
-5. [] import ldif file in ldap
+5. [] Import ldif file in LDAP
 
-6. [] print or write down password (with phrase) for user
+6. [] Reflect on Group memberships
+
+7. [] Print or write down password (with phrase) for new user
+
+8. [] Deliver information to new user
 

@@ -9,7 +9,8 @@ books = ["it/add_ldap_user.rb"]
 books.each do |book|
   filename = File.join("doc", book.sub('.rb', '.md'))
 
-  md = Runbook::Viewer.new(eval(File.read book)).generate(view: :markdown)
+  load book
+  md = Runbook::Viewer.new(Runbook.books.last).generate(view: :markdown)
 
   FileUtils.mkdir_p(File.dirname filename)
   File.write(filename, md)
