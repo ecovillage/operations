@@ -28,17 +28,22 @@ runbook = Runbook.book "IT/Add LDAP User" do
 
     step "output ldif file" do
       ruby_command do
-        user = Operations::IT::LDAP::User.new first_name: @first_name,
+        @user = Operations::IT::LDAP::User.new first_name: @first_name,
           last_name: @last_name,
           mail: @email,
           number: @last_gid.to_i + 1
         pass_hash = Operations::IT::LDAP::AddUser.pass_hash_ssha @passphrase[1]
-        @ldif = Operations::IT::LDAP::AddUser.ldif user, pass_hash
+        @ldif = Operations::IT::LDAP::AddUser.ldif @user, pass_hash
         notice @ldif
       end
     end
 
     step "save as ldif file" do
+      ruby_command do
+        filename = "/tmp/#{@user.uid}.ldif"
+        File.write(filename, @ldif)
+        notice "Wrote ldif to #{filename}"
+      end
     end
 
     step "import ldif file in ldap" do
