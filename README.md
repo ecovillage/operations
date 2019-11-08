@@ -14,6 +14,9 @@ run `bundle` to install `runbook` (you need to have ruby installed for all that)
 
 ## Updating runbooks
 
+## Creating doc/*md from runbooks
+
+
 ## Tests
 
 ## Contributing
