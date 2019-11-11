@@ -8,7 +8,15 @@ run `bundle` to install the `runbook` and other dependencies (you need to have r
 
 ### Creating new runbooks
 
-`runbook generate ?`
+E.g. for runbook `IT/Do the Task`:
+
+  * `runbook generate runbook it/do_the_task` .
+
+  * Make it executable:
+      chmod +x it/do_the_task.rb
+
+  * Then, do not forget to include this book into the doc/markdown generation:
+      echo it/do_the_task.rb >> runbooks_to_md.rb
 
 ### Running runbooks
 
