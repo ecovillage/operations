@@ -23,3 +23,4 @@ end
 
 __END__
 it/add_ldap_user.rb
+it/resolve_saraswati_wp_sync_problems.rb

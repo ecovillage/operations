@@ -22,6 +22,8 @@ E.g. for runbook `IT/Do the Task`:
 
 The runbooks are executables.  Run them from the base-directory (e.g. `it/add_ldap_user.rb`).
 
+Or `runbook exec <path_to_runbook>`, or (without input) `runbook exec --auto <path_to_runbook>`.
+
 ## Runbooks contained
 
   * [it/add_ldap_user.rb](it/add_ldap_user.rb): Add a new LDAP user to the directory.
