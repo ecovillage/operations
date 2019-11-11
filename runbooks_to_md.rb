@@ -2,6 +2,11 @@
 
 require 'runbook'
 
+# Generate markdown views of runbooks listed at end of this file.
+# The .md files are stored in (doc/)[doc/] .
+
+# Eventually, this could become a Rake task.
+
 # Books are defined at end of this file (to allow for easy automated manipulation).
 books = DATA.readlines.map{|l| l.strip}
 
@@ -23,4 +28,4 @@ end
 
 __END__
 it/add_ldap_user.rb
-it/resolve_saraswati_wp_sync_problems.rb
+it/remove_guest_users_groups.rb
