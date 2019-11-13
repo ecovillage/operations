@@ -29,3 +29,4 @@ end
 __END__
 it/add_ldap_user.rb
 it/remove_guest_users_groups.rb
+it/update_child_theme.rb
