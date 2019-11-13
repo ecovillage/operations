@@ -15,6 +15,8 @@ books = DATA.readlines.map{|l| l.strip}
 books.each do |book|
   filename = File.join("doc", book.sub('.rb', '.md'))
 
+  STDOUT.puts "processing #{book} -> #{filename}"
+
   load book
   md = Runbook::Viewer.new(Runbook.books.last).generate(view: :markdown)
 
