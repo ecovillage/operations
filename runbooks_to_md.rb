@@ -19,7 +19,7 @@ books.each do |book|
 
   STDOUT.puts "processing #{book} -> #{filename}"
 
-  index_file_data += "  * [#{book}](#{filename})\n"
+  index_file_data += "  * [#{book}](#{filename[4..-1]})\n"
 
   load book
   md = Runbook::Viewer.new(Runbook.books.last).generate(view: :markdown)
