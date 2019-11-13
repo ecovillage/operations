@@ -19,10 +19,15 @@ books.each do |book|
 
   STDOUT.puts "processing #{book} -> #{filename}"
 
-  index_file_data += "  * [#{book}](#{filename[4..-1]})\n"
-
   load book
   md = Runbook::Viewer.new(Runbook.books.last).generate(view: :markdown)
+
+  index_file_data += "  * [#{book}](#{filename[4..-1]})\n"
+  description = Runbook.books.last.items.find{|i| i.class == Runbook::Statements::Description}&.msg
+  if description
+    description = description.split("\n").map{|l| "    > #{l}\n"}.join
+    index_file_data += "#{description}"
+  end
 
   FileUtils.mkdir_p(File.dirname filename)
   File.write(filename, md)
