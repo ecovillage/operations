@@ -30,6 +30,8 @@ Or `runbook exec <path_to_runbook>`, or (without input) `runbook exec --auto <pa
 
   * [it/add_ldap_user.rb](it/add_ldap_user.rb): Add a new LDAP user to the directory.
 
+See [doc](doc/index.md) for a list and details about runbooks.
+
 ## Updating runbooks
 
 ## Creating doc/*md from runbooks
