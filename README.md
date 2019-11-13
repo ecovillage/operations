@@ -17,7 +17,7 @@ The script will take care of
     runbook generate runbook it/do_the_task
     chmod +x it/do_the_task.rb
     echo it/do_the_task.rb >> runbooks_to_md.rb
-
+    $EDITOR it/do_the_task.rb
 .
 
 ### Running runbooks

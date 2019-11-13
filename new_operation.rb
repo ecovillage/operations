@@ -23,5 +23,7 @@ put_exec "chmod +x #{RUNBOOK_NAME}.rb"
 # Add it to documentation markdown view renderer
 put_exec "echo #{RUNBOOK_NAME}.rb >> runbooks_to_md.rb"
 
-# Exit with grace
+exec "\$EDITOR #{RUNBOOK_NAME}.rb"
+
+# Exit with grace. As long as there is the exec call above this will never happen, though
 exit 0
