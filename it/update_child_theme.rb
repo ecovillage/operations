@@ -20,7 +20,7 @@ runbook = Runbook.book "It/Update Child Theme" do
 
     step "Find version of upstream Hueman theme." do
       path local_upstream_path
-      capture %Q{git tag -l | tail -n 1}, into: :upstream_version
+      capture %Q{git tag --list 'v*' --sort="version:refname" | tail -n 1}, into: :upstream_version
     end
 
     step "Smile if nothing has to be done" do
