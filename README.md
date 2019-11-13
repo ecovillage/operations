@@ -20,6 +20,10 @@ The script will take care of
     $EDITOR it/do_the_task.rb
 .
 
+#### Where does my custom code and asset go?
+
+TBD. Currently look for `lib/<pathtorunbook>`.  Put tests into `test/<pathtorunbook>`.
+
 ### Running runbooks
 
 The runbooks are executables.  Run them from the base-directory (e.g. `it/add_ldap_user.rb`).
@@ -29,15 +33,20 @@ Or `runbook exec <path_to_runbook>`, or (without input) `runbook exec --auto <pa
 ## Runbooks contained
 
   * [it/add_ldap_user.rb](it/add_ldap_user.rb): Add a new LDAP user to the directory.
+  * ...
 
-See [doc](doc/index.md) for a list and details about runbooks.
+See [doc/index](doc/index.md) (or [doc/](doc/) directory) for a list and details about runbooks.
 
 ## Updating runbooks
 
+After editing the code, update the documentation / markdown view with
+
+    ./runbooks_to_md.rb
+
 ## Creating doc/*md from runbooks
 
-Execute `runbooks_to_md.rb` to populate `doc/` folder (TODO: make this a rake task).
-To incorporate new runbooks, edit `runbooks_to_md.rb` and include the file.
+Execute `runbooks_to_md.rb` to populate `doc/` folder (TODO: make this a rake task? Or a runbook itself? ...).
+To incorporate new runbooks, edit `runbooks_to_md.rb` and include the file.  Note that this will be done for you if you add new runbooks via the `new_operation.md <nameoftask>` script given above.
 
 ## Tests
 
