@@ -43,3 +43,4 @@ __END__
 it/add_ldap_user.rb
 it/remove_guest_users_groups.rb
 it/update_child_theme.rb
+it/create_wp_stage.rb

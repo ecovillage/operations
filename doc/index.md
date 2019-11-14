@@ -1,6 +1,8 @@
 # List of runbooks
   * [it/add_ldap_user.rb](it/add_ldap_user.md)
     > This is a runbook that describes how to set up a new user in our LDAP
+  * [it/create_wp_stage.rb](it/create_wp_stage.md)
+    >     This is a runbook to create a staging copy of a Wordpress installation.
   * [it/remove_guest_users_groups.rb](it/remove_guest_users_groups.md)
     > This is a runbook to remove the guest login users and groups created by guest logins on Ubuntu < 18.04 (except guest-prefs).
   * [it/update_child_theme.rb](it/update_child_theme.md)
