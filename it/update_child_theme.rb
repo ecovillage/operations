@@ -7,6 +7,7 @@ runbook = Runbook.book "It/Update Child Theme" do
     Child Theme is found at: https://github.com/ecovillage/hueman-7l-child
     Hueman Theme Upstream is found at https://github.com/presscustomizr/hueman
     You might need to adjust the path definitions in this file in order to work with it.
+    git rebase would come to the rescue, but for that, it seems to be too late and also because we are dealing with diffs (child theme) its yet unclear how this would work smoothly.
   DESC
 
   local_child_path    = "~/projects/7l/fk/hueman-7l-child/"

@@ -4,7 +4,7 @@ Testing [runbooks](https://github.com/braintree/runbook).
 
 ## Usage
 
-run `bundle` to install the `runbook` and other dependencies (you need to have ruby installed for all that).
+run `bundle` to install the `runbook` and other dependencies (you need to have ruby version >= 2.3 installed for all that).
 
 ### Creating new runbooks
 
