@@ -15,16 +15,16 @@ runbook = Runbook.book "It/Patch Nextcloud" do
   section "Patch up stuff" do
     step "True LDAP group autocomplete" do
       notice "https://github.com/nextcloud/server/issues/15224"
-      sed_cmd = %[sed -i "s/\$result = \$term . '\*';/\$result = '*' . \$term . '\*';/" apps/user_ldap/lib/Access.php]
       ruby_command do
+        sed_cmd = %[sed -i "s/\$result = \$term . '\*';/\$result = '*' . \$term . '\*';/" apps/user_ldap/lib/Access.php]
         notice "run #{sed_cmd}"
       end
     end
 
     step "Curl download timeout setting for update/app server communication" do
       notice "https://github.com/nextcloud/server/issues/14926"
-      sed_cmd = %[sed -i "s/'timeout' => 10,/'timeout' => 90/" lib/private/App/AppStore/Fetcher/Fetcher.php]
       ruby_command do
+        sed_cmd = %[sed -i "s/'timeout' => 10,/'timeout' => 90/" lib/private/App/AppStore/Fetcher/Fetcher.php]
         notice "run #{sed_cmd}"
       end
     end
