@@ -8,7 +8,7 @@ require 'runbook'
 # Eventually, this could become a Rake task.
 
 # Books are defined at end of this file (to allow for easy automated manipulation).
-books = DATA.readlines.map{|l| l.strip}
+books = DATA.readlines.map{|l| l.strip}.sort.uniq
 
 index_file_data = "# List of runbooks\n"
 
