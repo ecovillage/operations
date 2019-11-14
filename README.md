@@ -1,6 +1,10 @@
 # Operations
 
-Testing [runbooks](https://github.com/braintree/runbook).
+Playing around with [runbooks](https://github.com/braintree/runbook) in the context of tasks that have to be done now in then in our infrastructure.
+
+Runbooks idea is gradual automation, you start with no-op scripts that just define the necessary steps and then you start slowly filling the gaps and automate parts of the process.
+
+This repository also comes with a script to generate the markdown rendering of the processes (runbooks).
 
 ## Usage
 
@@ -47,6 +51,10 @@ After editing the code, update the documentation / markdown view with
 
 Execute `runbooks_to_md.rb` to populate `doc/` folder (TODO: make this a rake task? Or a runbook itself? ...).
 To incorporate new runbooks, edit `runbooks_to_md.rb` and include the file.  Note that this will be done for you if you add new runbooks via the `new_operation.md <nameoftask>` script given above.
+
+### Browsing documentation / runbooks
+
+You can use [madness](https://github.com/DannyBen/madness) (`gem install madness`) to fire up a webserver that displays the markdown files.
 
 ## Tests
 
