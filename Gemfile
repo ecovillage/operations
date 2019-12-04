@@ -10,3 +10,5 @@ gem 'minitest'
 
 # for it/add_user_ldif
 gem 'asciify'
+gem 'net-ldap'
+

@@ -1,6 +1,8 @@
 require 'securerandom'
 require 'base64'
 
+require 'net/ldap'
+
 module Operations
   module IT
     module LDAP
@@ -38,6 +40,24 @@ module Operations
                number:    user.number,
                passwd:    passwd
               }
+        end
+
+        def self.last_uid host=nil, port=nil, user=nil, password=nil, base=nil
+          ldap = Net::LDAP.new
+          ldap.host = host || ENV['IT_LDAP_HOST']
+          ldap.port = port || ENV['IT_LDAP_PORT']
+          if (user && password)
+            ldap.auth user, password
+          else
+            ldap.auth ENV['IT_LDAP_AUTH_USER'], ENV['IT_LDAP_AUTH_PASSWORD']
+          end
+          ldap.bind
+
+          search_base = base || ENV['IT_LDAP_SEARCH_BASE']
+
+          ldap.search(base: search_base).map do |entry|
+            entry[:uidnumber]
+          end.max
         end
       end
     end

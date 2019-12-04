@@ -7,7 +7,7 @@ require './lib/it/add_user_ldif'
 
 runbook = Runbook.book "IT/Add LDAP User" do
   description <<~DESC
-    This is a runbook that describes how to set up a new user in our LDAP
+    This is a runbook to set up a new user in our LDAP
   DESC
 
   section "Generate LDIF file" do
@@ -16,6 +16,14 @@ runbook = Runbook.book "IT/Add LDAP User" do
       ask 'First Name of user:',     into: 'first_name'
       ask 'Last Name of user:',      into: 'last_name'
       ask 'Last UID in LDAP:',       into: 'last_uid'
+    end
+
+    step "Configure LDAP connection (alternative via ENV, or skip)" do
+      ask 'LDAP: Host',        into: 'ldap_host'
+      ask 'LDAP: Port',        into: 'ldap_port'
+      ask 'LDAP: User',        into: 'ldap_user'
+      ask 'LDAP: Password',    into: 'ldap_password'
+      ask 'LDAP: Search Base', into: 'ldap_searchbase'
     end
 
     step "Generate password" do
