@@ -1,6 +1,6 @@
 # IT/Add LDAP User
 
-This is a runbook that describes how to set up a new user in our LDAP
+This is a runbook to set up a new user in our LDAP
 
 ## 1. Generate LDIF file
 

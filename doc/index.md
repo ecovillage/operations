@@ -1,6 +1,6 @@
 # List of runbooks
   * [it/add_ldap_user.rb](it/add_ldap_user.md)
-    > This is a runbook that describes how to set up a new user in our LDAP
+    > This is a runbook to set up a new user in our LDAP
   * [it/create_wp_stage.rb](it/create_wp_stage.md)
     > This is a runbook to create a staging copy of a Wordpress installation.
   * [it/patch_nextcloud.rb](it/patch_nextcloud.md)
