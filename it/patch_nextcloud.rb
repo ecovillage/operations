@@ -28,6 +28,13 @@ runbook = Runbook.book "It/Patch Nextcloud" do
         notice "run #{sed_cmd}"
       end
     end
+
+    step "External Storage/smb fix" do
+      notice "https://github.com/nextcloud/server/issues/17846#issuecomment-551782899"
+      notice "(new DefinitionParameter('timeout', $l->t('Timeout')))      
+                ->setType(DefinitionParameter::VALUE_HIDDEN)                
+                ->setFlag(DefinitionParameter::FLAG_OPTIONAL),"
+    end
   end
 end
 
