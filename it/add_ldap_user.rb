@@ -64,6 +64,9 @@ runbook = Runbook.book "IT/Add LDAP User" do
     step "Reflect on Group memberships" do
     end
 
+    step "Test the login yourself" do
+    end
+
     step "Print or write down password (with phrase) for new user" do
     end
 
