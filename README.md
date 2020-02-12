@@ -34,6 +34,10 @@ The runbooks are executables.  Run them from the base-directory (e.g. `it/add_ld
 
 Or `runbook exec <path_to_runbook>`, or (without input) `runbook exec --auto <path_to_runbook>`.
 
+#### Runbook configuration
+
+`it/add_ldap_user` does load the file `ldap.env` as environment variables, if present and the gem `dotenv` is installed.
+
 ## Runbooks contained
 
   * [it/add_ldap_user.rb](it/add_ldap_user.rb): Add a new LDAP user to the directory.

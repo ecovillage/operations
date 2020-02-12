@@ -5,6 +5,10 @@ require "runbook"
 require './lib/it/user'
 require './lib/it/add_user_ldif'
 
+if require 'dotenv'
+  Dotenv.load('ldap.env')
+end
+
 runbook = Runbook.book "IT/Add LDAP User" do
   description <<~DESC
     This is a runbook to set up a new user in our LDAP

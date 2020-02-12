@@ -12,3 +12,5 @@ gem 'minitest'
 gem 'asciify'
 gem 'net-ldap'
 
+gem 'dotenv'
+
